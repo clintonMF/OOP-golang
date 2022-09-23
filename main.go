@@ -53,4 +53,27 @@ func main() {
 	fmt.Println("Unique field: ", mercedes.EngineName())
 	fmt.Println("Unique field: ", mercedes.WheelName())
 
+	/* comparable
+
+	the lines of code below looks at comparing structs
+	*/
+
+	p2 := structs.NewPerson("goku", "son")
+	p3 := structs.NewPerson("goku", "son")
+
+	if p2 == p3 {
+		// this checks if both structs are equal
+		fmt.Println("both structs are equal")
+	} else {
+		fmt.Println("both structs are not equal")
+	}
+
+	/*
+		the direct comparison made between structs p2 and p3 is possible
+		because they only contain primitive data structures in this case string.
+		If they contained non primitive/ dynamic data structure such as slice and
+		maps, direct comparism can't be made i.e the compiler would show error.
+
+		there is a way around this. which is shown in the comparison.go file */
+
 }
