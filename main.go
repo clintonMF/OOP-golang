@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"example.com/go-oop/composition"
 	"example.com/go-oop/polymorphism"
 	"example.com/go-oop/structs"
 )
@@ -38,5 +39,18 @@ func main() {
 
 	c.Render()
 	d.Render()
+
+	// composition
+	mercedes := composition.NewCar("bmw", "V4 engine", "4 wheels", 23, 4)
+
+	fmt.Println(mercedes)
+
+	//getting the first field (unique fields)
+	fmt.Println("Unique field: ", mercedes.HP())
+	fmt.Println("Unique field: ", mercedes.WheelDimension())
+
+	//getting the second field (non unique fields)
+	fmt.Println("Unique field: ", mercedes.EngineName())
+	fmt.Println("Unique field: ", mercedes.WheelName())
 
 }
