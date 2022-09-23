@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"example.com/go-oop/comparison"
 	"example.com/go-oop/composition"
 	"example.com/go-oop/polymorphism"
 	"example.com/go-oop/structs"
@@ -76,4 +77,14 @@ func main() {
 
 		there is a way around this. which is shown in the comparison.go file */
 
+	p4 := comparison.NewPerson("bulma", "chichi", []int{1, 2, 3})
+	p5 := comparison.NewPerson("bulma", "chichi", []int{1, 2, 3})
+
+	checkEquals := p4.Equals(&p5)
+
+	if checkEquals {
+		fmt.Println("both structs are equal")
+	} else {
+		fmt.Println("both structs are not equal")
+	}
 }
